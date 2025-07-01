@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Menu Pembayaran</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .wa-icon {
+      margin-top: 20px;
+      cursor: pointer;
+    }
+    .wa-icon img {
+      width: 40px;
+      height: 40px;
+    }
+
+    .wa-popup {
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      position: absolute;
+      bottom: 120px;
+      right: 20px;
+      z-index: 10;
+      display: none;
+    }
+
+    .wa-popup a {
+      display: block;
+      margin: 8px 0;
+      color: #2d89ef;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .menu-box h2 {
+      color: #00ffff;
+      animation: pulseText 2s infinite,
+      colorShift 3s infinite;
+    }
+
+    .subtitle h2 {
+      color: #00ffff;
+      animation: pulseText 4s infinite,
+      colorShift 3s infinite;
+    }
+
+    @keyframes pulseText {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+    
+    @keyframes colorShift {
+      0% { color: #ff0000; }
+      25% { color: #00ff00; }
+      50% { color: #0000ff; }
+      75% { color: #ffff00; }
+      100% { color: #ff0000; }
+    }
+    
+    .subtitle {
+  font-size: 18px;
+  color: #ffffff;
+  animation: warnaBerganti 3s infinite,
+  pulseText 3s infinite;
+}
+
+@keyframes warnaBerganti {
+  0%   { color: #ffff00; }   /* kuning */
+  25%  { color: #ff0000; }   /* merah */
+  50%  { color: #00ff00; }   /* hijau */
+  75%  { color: #0000ff; }   /* biru */
+  100% { color: #ffff00; }   /* balik ke kuning */
+}
+  </style>
+</head>
+<body>
+
+  <div class="overlay">
+    <div class="menu-box">
+      <h2>Selamat Datang</h2>
+      <div class="subtitle">Di Web Aiss Hosting</div>
+
+      <a href="bayar.html"><button>Bayar Sekarang</button></a>
+      <a href="riwayat.html"><button>Cek Riwayat</button></a>
+      <a href="tentang.html"><button>Tentang Aplikasi</button></a>
+
+      <!-- Ikon WhatsApp -->
+      <div class="wa-icon" onclick="togglePopup()">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA Icon">
+      </div>
+
+      <!-- Pop-up Pilihan WhatsApp -->
+      <div id="waPopup" class="wa-popup">
+        <a href="https://chat.whatsapp.com/GVxdDOcP0X41eMuc6lenAJ" target="_blank">🔗 Grup WhatsApp</a>
+        <a href="https://whatsapp.com/channel/0029Vb5Apy57tkj6KnwJaS3s" target="_blank">📢 Channel WhatsApp</a>
+        <a href="https://wa.me/6287831914759" target="_blank">📞 Kontak Creator</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function togglePopup() {
+      const popup = document.getElementById('waPopup');
+      popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
+    }
+
+    document.addEventListener("click", function(e) {
+      const popup = document.getElementById('waPopup');
+      const icon = document.querySelector('.wa-icon');
+      if (!popup.contains(e.target) && !icon.contains(e.target)) {
+        popup.style.display = 'none';
+      }
+    });
+  </script>
+
+</body>
+</html>

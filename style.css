@@ -1,0 +1,54 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: url('https://files.catbox.moe/3npik2.jpg') no-repeat center center fixed;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-box {
+  text-align: center;
+  padding: 2rem;
+  width: 90%;
+  max-width: 400px;
+}
+
+.menu-box h2 {
+  font-size: 6vw; /* Responsif berdasarkan lebar layar */
+  color: #00ffff;
+  animation: pulseText 2s infinite;
+}
+
+.subtitle {
+  font-size: 4vw;
+  animation: warnaBerganti 3s infinite;
+  margin-bottom: 1.5rem;
+}
+
+/* Tombol responsif */
+.menu-box button {
+  width: 100%;
+  padding: 1rem;
+  margin: 10px 0;
+  font-size: 1rem;
+  border: none;
+  background-color: #2d89ef;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.menu-box button:hover {
+  background-color: #1b6ac9;
+}
+
+/* Ikon WA tengah dan responsif */
+.wa-icon img {
+  width: 40px;
+  height: 40px;
+}
